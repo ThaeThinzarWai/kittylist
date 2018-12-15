@@ -4,7 +4,6 @@ import CatList from '../containers/CatList';
 import BreedList from '../containers/BreedList';
 
 class Header extends React.Component {
-
     render() {
         return (
             <Router>

@@ -24,17 +24,30 @@ class BreedList extends React.Component {
                 }
             )
     }
+    clickSearch(e) {
+
+    }
     render() {
         const breeds = this.state.breeds;
         return (
-            <div>
-                <div className="col-md-12">
-                    <h6>breed List</h6>
-                    {breeds.map(breed => (
-                        <div className="col-md-4">
-                            <span class="badge badge-light">{breed.name}</span>
-                        </div>
-                    ))}
+            <div className="col-md">
+                <div className="float-right">
+                    <form className="form-inline">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search Breeds"
+                               aria-label="Search"/>
+                        <button className="btn btn-outline-success my-2 my-sm-0"id="searchBreeds" type="submit" onClick={this.clickSearch}>Search</button>
+                    </form>
+                </div>
+                <div>
+                    <h6>Breed List</h6>
+                    {breeds.map(function(breed, i){
+                        return <div className={"row"} key={i}>
+                            {[
+                                <a href="#" className="badge badge-light" key={i}>{breed.name}</a>,
+                                <br/>
+                            ]}
+                        </div>;
+                    })}
                 </div>
             </div>
         );
