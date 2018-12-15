@@ -6,7 +6,6 @@ import AddNewCat from '../containers/AddNewCat';
 
 
 class Header extends React.Component {
-
     render() {
         return (
             <Router>
