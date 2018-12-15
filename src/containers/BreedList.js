@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class CatList extends React.Component {
+class BreedList extends React.Component {
     render() {
         return (
             <div>
                 <div className="row">
                     <div className="col-md-12">
-                        <h2>Welcome From Cat List Page</h2>
+                        <h2>Welcome From Breed List Page</h2>
                     </div>
                 </div>
             </div>
@@ -15,4 +15,4 @@ class CatList extends React.Component {
     };
 }
 
-export default CatList;
+export default BreedList;
