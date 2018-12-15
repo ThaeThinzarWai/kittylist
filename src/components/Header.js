@@ -6,6 +6,7 @@ class Header extends React.Component {
     render() {
         return (
             <Router>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <ul className="nav">
                     <li className="nav-item">
                         <Link to="/" className="nav-link active">Cat List</Link>
@@ -14,6 +15,7 @@ class Header extends React.Component {
                         <Link to="/breeds" className="nav-link">Breed List</Link>
                     </li>
                 </ul>
+                </nav>
             </Router>
         );
     }
