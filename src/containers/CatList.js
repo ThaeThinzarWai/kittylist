@@ -25,18 +25,23 @@ class CatList extends React.Component {
             )
     }
 
+    handleFavourite = event => {
+        alert('Mark as Fav Test!!');
+    }
+
     render() {
         const cats = this.state.cats;
 
         return (
-            <div>
-                <div className="row">
-                    {cats.map(cat => (
-                        <div className="col-md-4">
-                            <h2>{cat.sub_id}</h2>
-                        </div>
-                    ))}
-                </div>
+            <div className="row" style={{"marginTop":"20px"}}>
+                {cats.map(cat => (
+                    <div className="col-md-4">
+                        <img src={cat.url} className="img-responsive" width="70%" />
+                        <h2>{cat.sub_id}</h2>
+                        <h5>{cat.id}</h5>
+                        <button onClick={this.handleFavourite} className="btn btn-primary">Mark as Favourite</button>
+                    </div>
+                ))}
             </div>
         );
     };

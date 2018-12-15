@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CatList from '../containers/CatList';
 import BreedList from '../containers/BreedList';
+import AddNewCat from '../containers/AddNewCat';
+
 
 class Header extends React.Component {
 
@@ -25,6 +27,7 @@ class Header extends React.Component {
                     </nav>
                     <Route exact path="/" component={CatList} />
                     <Route path="/breeds" component={BreedList} />
+                    <Route path="/addcat" component={AddNewCat} />
                 </div>
             </Router>
         );
