@@ -71,7 +71,7 @@ class BreedList extends React.Component {
         const breeds = this.state.breeds;
         const list = this.state.breedslist;
         return (
-            <div className="col-md">
+            <div className="col-md" style={{"padding-top":"20px"}}>
                 <div className="form-group">
                     <form className="form-inline">
                         <select className="border border-info btn-sm" name="breedList" value={this.state.id} onChange={this.selectedBreed}>
