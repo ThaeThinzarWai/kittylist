@@ -29,7 +29,7 @@ class FavList extends React.Component {
         const fav_cats = this.state.fav_cats;
 
         return (
-            <div className="row" style={{"marginTop":"0px"}}>
+            <div className="row" style={{"margin":"0px"}}>
                 {fav_cats.map(cat => (
                     <div className="col-md-4">
                         <div className="card-deck" style={{"padding":"50px", "padding-bottom":"0px","padding-top":"15px"}}>
