@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import addcat_action from '../actions/index'
+import addcat_action from '../actions/index';
 
 const mapDispatchToProps = (dispatch) => ({
     addCat : (value) => dispatch(addcat_action(value))
