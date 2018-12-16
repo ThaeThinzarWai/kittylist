@@ -12,7 +12,7 @@ const fav = (state = [], action) => {
             .post("https://api.thecatapi.com/v1/favourites", action.text, {
             headers: { "Content-Type": "application/json" }
             })
-            .then(response => console.log(response));
+            .then(response => alert("Added to Favourite Cat"));
 
       return state;
     case "REMOVE_FAV":
@@ -23,7 +23,7 @@ const fav = (state = [], action) => {
             .delete(url, {
               headers: { "Content-Type": "application/json" }
             })
-            .then(response => console.log(response));
+            .then(response => alert("Removed From Favourite Cat"));
 
         return state;
     default:

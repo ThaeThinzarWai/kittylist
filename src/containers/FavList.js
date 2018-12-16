@@ -29,14 +29,16 @@ class FavList extends React.Component {
         const fav_cats = this.state.fav_cats;
 
         return (
-            <div className="row" style={{"marginTop":"20px"}}>
+            <div className="row" style={{"marginTop":"0px"}}>
                 {fav_cats.map(cat => (
-                    <div className="col-md-4" style={{"marginBottom":"10px"}}>
-                        <div className="card" style={{"width":"18rem", "height":"350px"}}>
-                            <img className="card-img-top img-fluid" src={cat.image.url}  style={{"height":"200px"}} />
-                            <div className="card-body">
-                                <h5 className="card-title">{cat.sub_id}</h5>
-                                <p className="card-text">{cat.id}</p>
+                    <div className="col-md-4">
+                        <div className="card-deck" style={{"padding":"50px", "padding-bottom":"0px","padding-top":"15px"}}>
+                            <div className="card" style={{"width":"18rem", "height":"350px"}}>  
+                                <img className="card-img-top img-fluid" src={cat.image.url}  style={{"height":"200px"}} />
+                                <div className="card-body">
+                                    <h5 className="card-title">{cat.sub_id}</h5>
+                                    <p className="card-text">{cat.id}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
