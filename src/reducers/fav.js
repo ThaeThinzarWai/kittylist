@@ -15,6 +15,17 @@ const fav = (state = [], action) => {
             .then(response => console.log(response));
 
       return state;
+    case "REMOVE_FAV":
+
+        const url = "https://api.thecatapi.com/v1/favourites/" + action.text
+        axios.defaults.headers.common["x-api-key"] = api_key;
+        axios
+            .delete(url, {
+              headers: { "Content-Type": "application/json" }
+            })
+            .then(response => console.log(response));
+
+        return state;
     default:
       return state;
   }

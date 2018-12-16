@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import addfav_action from '../actions/add_fav';
+import removefav_action from '../actions/remove_fav';
 
 const mapDispatchToProps = (dispatch) => ({
-    addFav : (value) => dispatch(addfav_action(value))
+    addFav : (value) => dispatch(addfav_action(value)),
+    removeFav : (value) => dispatch(removefav_action(value))
 });
 
 const api_key = "6e27939c-67e0-4eaa-bb9e-9f9e2a212c9b";
@@ -56,16 +58,23 @@ class CatList extends React.Component {
             "sub_id" : sub_id
         }
         this.props.addFav(fav_data);
-     };
+    };
+
+    handleRemoveFavourite =  function(fav_id) {
+
+        this.props.removeFav(fav_id);
+    };
 
     filterFavButton(image_id, sub_id) {
         
         const fav_cats = this.state.fav_cats;
         let result = <button onClick={()=>this.handleFavourite(image_id, sub_id)} className="btn btn-primary">Mark as Favourite</button>;
+
+        let current_obj = this;
         fav_cats.forEach(function(fav_cat,index){
             console.log(image_id,fav_cat.image_id);
             if(image_id == fav_cat.image_id) {
-                result = <button className="btn btn-primary">Remove Favourite</button>
+                result = <button onClick={()=>current_obj.handleRemoveFavourite(fav_cat.id)} className="btn btn-primary">Remove Favourite</button>
             }
         })
 
