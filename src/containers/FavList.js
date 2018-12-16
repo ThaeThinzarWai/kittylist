@@ -31,10 +31,14 @@ class FavList extends React.Component {
         return (
             <div className="row" style={{"marginTop":"20px"}}>
                 {fav_cats.map(cat => (
-                    <div className="col-md-4">
-                        <img src={cat.image.url} className="img-responsive" width="70%" />
-                        <h2>{cat.sub_id}</h2>
-                        <h5>{cat.id}</h5>
+                    <div className="col-md-4" style={{"marginBottom":"10px"}}>
+                        <div className="card" style={{"width":"18rem", "height":"350px"}}>
+                            <img className="card-img-top img-fluid" src={cat.image.url}  style={{"height":"200px"}} />
+                            <div className="card-body">
+                                <h5 className="card-title">{cat.sub_id}</h5>
+                                <p className="card-text">{cat.id}</p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

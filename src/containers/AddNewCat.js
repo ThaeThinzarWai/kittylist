@@ -25,21 +25,35 @@ class AddNewCat extends React.Component {
 
     render() {
         return (
-            <div className="row" style={{"marginTop":"20px"}}>
-                <div className="col-md-7">
-                    <form onSubmit={this.handleSubmit} encType="multipart/form-data">
-                        <div className="form-group">
-                            <label>Sub ID</label>
-                            <input type="text" ref={this.input1} className="form-control" placeholder="Enter Sub ID" />
+            <div className="col-md-8 offset-md-2">
+                <br />
+                <div className="card text-center">
+                    <div className="card-header">
+                        Add New Cat
+                    </div>
+                    <div className="card-body">
+                        <div className="col-md-10 offset-md-1">
+                            <form onSubmit={this.handleSubmit} encType="multipart/form-data">
+                                <div className="form-group row">
+                                    <label className="col-sm-3 col-form-label">Sub ID</label>
+                                    <div className="col-sm-9">
+                                        <input type="text" ref={this.input1} className="form-control" placeholder="Enter Sub ID" />
+                                    </div>
+                                </div>
+                                <div className="form-group row">
+                                    <label className="col-sm-3 col-form-label">Cat Image</label>
+                                    <div className="col-sm-9">
+                                        <input type="file" name="files" ref={this.input2} className="form-control-file" />
+                                    </div>
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-sm-9">
+                                        <button className="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div className="form-group">
-                            <label>Cat Image</label>
-                            <input type="file" name="files" ref={this.input2} className="form-control-file" />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         );

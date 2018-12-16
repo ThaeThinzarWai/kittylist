@@ -10,8 +10,8 @@ class Header extends React.Component {
     render() {
         return (
             <Router>
-                <div>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <React.Fragment>
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                         <a className="navbar-brand" href="#">Kitty Project</a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@ class Header extends React.Component {
                     <Route path="/breeds" component={BreedList} />
                     <Route path="/favouritelist" component={FavList} />
                     <Route path="/addcat" component={AddNewCat} />
-                </div>
+                </React.Fragment>
             </Router>
         );
     }

@@ -5,9 +5,9 @@ class MasterLayout extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <React.Fragment>
                 <Header />
-            </div>
+            </React.Fragment>
         );
     }
 }
