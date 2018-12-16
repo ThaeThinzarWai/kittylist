@@ -1,4 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import addfav_action from '../actions/add_fav';
+
+const mapDispatchToProps = (dispatch) => ({
+    addFav : (value) => dispatch(addfav_action(value))
+});
+
+const api_key = "6e27939c-67e0-4eaa-bb9e-9f9e2a212c9b";
 
 class CatList extends React.Component {
     constructor(props){
@@ -25,9 +33,14 @@ class CatList extends React.Component {
             )
     }
 
-    handleFavourite = event => {
-        alert('Mark as Fav Test!!');
-    }
+    handleFavourite =  function(image_id, sub_id) {
+
+        const fav_data = {
+            "image_id" : image_id,
+            "sub_id" : sub_id
+        }
+        this.props.addFav(fav_data);
+     };
 
     render() {
         const cats = this.state.cats;
@@ -39,7 +52,7 @@ class CatList extends React.Component {
                         <img src={cat.url} className="img-responsive" width="70%" />
                         <h2>{cat.sub_id}</h2>
                         <h5>{cat.id}</h5>
-                        <button onClick={this.handleFavourite} className="btn btn-primary">Mark as Favourite</button>
+                        <button onClick={()=>this.handleFavourite(cat.id, cat.sub_id)} className="btn btn-primary">Mark as Favourite</button>
                     </div>
                 ))}
             </div>
@@ -47,4 +60,4 @@ class CatList extends React.Component {
     };
 }
 
-export default CatList;
+export default connect(null, mapDispatchToProps)(CatList);

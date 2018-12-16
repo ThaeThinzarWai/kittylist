@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CatList from '../containers/CatList';
 import BreedList from '../containers/BreedList';
+import FavList from '../containers/FavList';
 import AddNewCat from '../containers/AddNewCat';
 
 
@@ -26,6 +27,7 @@ class Header extends React.Component {
                     </nav>
                     <Route exact path="/" component={CatList} />
                     <Route path="/breeds" component={BreedList} />
+                    <Route path="/favouritelist" component={FavList} />
                     <Route path="/addcat" component={AddNewCat} />
                 </div>
             </Router>
