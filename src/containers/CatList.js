@@ -85,7 +85,7 @@ class CatList extends React.Component {
         const cats = this.state.cats;
 
         return (
-            <div className="row" style={{"marginTop":"20px"}}>
+            <div className="row" style={{"margin":"0px"}}>
                 {cats.map(cat => (
                     <div className="col-md-4">
                         <div className="card-deck" style={{"padding":"50px", "padding-bottom":"0px","padding-top":"15px"}}>
