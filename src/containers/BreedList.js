@@ -27,6 +27,20 @@ class BreedList extends React.Component {
                     });
                 }
             )
+        fetch("https://api.thecatapi.com/v1/breeds/abys", {
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'x-api-key': 'ae5ff833-92da-43c8-bb7e-6876ee19398a'
+            })
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        breedslist : result
+                    });
+                }
+            )
     }
     clickSearch(e) {
         e.preventDefault();
@@ -58,28 +72,32 @@ class BreedList extends React.Component {
         const list = this.state.breedslist;
         return (
             <div className="col-md">
-                <div className="form-group float-right">
+                <div className="form-group">
                     <form className="form-inline">
-                        <select name="breedList" onChange={this.selectedBreed}>
+                        <select className="border border-info btn-sm" name="breedList" value={this.state.id} onChange={this.selectedBreed}>
                             {breeds.map(breed => (
                                 <option value={breed.id}>{breed.name}</option>
                             ))}
                         </select>
-                        <button className="btn btn-sm  my-2 my-sm-0"id="searchBreeds" type="submit" onClick={this.clickSearch}>Search</button>
+                        <button className="btn btn-outline-info btn-sm  my-2 my-sm-0"id="searchBreeds" type="submit" onClick={this.clickSearch}>Search</button>
                     </form>
                 </div>
-                 <div className="card bg-light mb-3" style={{"width": "30em"}}>
-                    <div className="card-body">
-                        <h5 className="card-title"> Breed List Detail</h5>
-                        <h5 className="card-title">{list.name}</h5>
-                        <p className="card-text">{list.description}</p>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">{list.life_span}</li>
-                            <li className="list-group-item">{list.temperament}</li>
-                            <li className="list-group-item">{list.wikipedia_url}</li>
-                        </ul>
-                    </div>
+                 <div className="card border-info mb-3" style={{"width": "30em"}}>
+                     <div className="card-header text-info"><b>Breed List:</b> {list.name}</div>
+                     <div className="card-body text-info">
+                         <p className="card-text"><b>{list.name}: </b><i>{list.description}</i></p>
+                         <hr/>
+                         <p className="card-text"><b>Life-Span: </b>{list.life_span}</p>
+                         <hr/>
+                         <p className="card-text"><b>Temperament: </b>{list.temperament}</p>
+                         <hr/>
+                         <p className="card-text"><b>Wikipedia_url: </b>{list.wikipedia_url}</p>
+                     </div>
                  </div>
+                <hr style={{"height": "6px",
+                    "background": "url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0",
+                    "border": "0",
+                }}/>
             </div>
         );
     };

@@ -49,14 +49,17 @@ class CatList extends React.Component {
             <div className="row" style={{"marginTop":"20px"}}>
                 {cats.map(cat => (
                     <div className="col-md-4" style={{"marginBottom":"10px"}}>
-                        <div className="card" style={{"width":"18rem", "height":"350px"}}>
-                            <img className="card-img-top img-fluid" src={cat.url}  style={{"height":"200px"}} />
-                            <div className="card-body">
-                                <h5 className="card-title">{cat.sub_id}</h5>
-                                <p className="card-text">{cat.id}</p>
-                                <button onClick={()=>this.handleFavourite(cat.id, cat.sub_id)} className="btn btn-primary">Mark as Favourite</button>
+                        <div className="card-deck" style={{"padding":"50px"}}>
+                            <div className="card" style={{"width":"18rem", "height":"350px"}}>
+                                <img className="card-img-top img-fluid" src={cat.url}  style={{"height":"200px"}} />
+                                <div className="card-body">
+                                    <h5 className="card-title">{cat.sub_id}</h5>
+                                    <p className="card-text">{cat.id}</p>
+                                    <button onClick={()=>this.handleFavourite(cat.id, cat.sub_id)} className="btn btn-primary">Mark as Favourite</button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 ))}
             </div>
